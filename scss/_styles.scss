@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto&display=swap");
+
+@font-face {
+  font-family: "ttnorms-bold";
+  src: url("../fonts/TTNorms-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ttnorms-medium";
+  src: url("../fonts/TTNorms-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ttnorms";
+  src: url("../fonts/TTNorms-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding-top: 20px;
+  &:before {
+    z-index: 10001;
+    line-height: 20px;
+    font-weight: 700;
+    text-align: center;
+    position: fixed;
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: limegreen;
+    content: "Xsmall";
+  }
+  @include media-breakpoint-up(sm) {
+    &:before {
+      content: "small";
+      background: #f00;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base;
+    &:before {
+      content: "middle";
+      background: green;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &:before {
+      content: "Large";
+      background: turquoise;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &:before {
+      content: "XLarge";
+      background: #f09;
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &:before {
+      content: "XXLarge";
+      background: #90f;
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  background: #ef8080;
+  background: -webkit-linear-gradient(to left, #ef8080 0%, #f0145a 100%);
+  background: -moz-linear-gradient(to left, #ef8080 0%, #f0145a 100%);
+  background: linear-gradient(to left, #ef8080 0%, #f0145a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.intro {
+  background: linear-gradient(
+    42.01deg,
+    #323264 14.33%,
+    #323264 51.39%,
+    #7a425e 87.53%
+  );
+  position: relative;
+  height: 100vh;
+  min-height: 857px;
+  overflow: hidden;
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(50, 50, 100, 0) 16.67%,
+      #323264 100%
+    );
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+  }
+}
+.logo {
+  background: url(../img/logo-on-dark.svg);
+  width: 77.5px;
+  height: 31px;
+  background-size: cover;
+
+  // position: absolute;
+  // top: 64px;
+  // left: 20px;
+  @include media-breakpoint-up(lg) {
+    position: static;
+    width: 155px;
+    height: 62px;
+  }
+}
+
+.navbar {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  left: 0;
+  @include media-breakpoint-up(lg) {
+    position: static;
+  }
+}
+
+.navbar-nav {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  height: calc(100vh - 50px);
+  @include media-breakpoint-up(lg) {
+    height: auto;
+    background: none;
+  }
+}
+
+.navbar-nav .nav-link {
+  font-size: 40px;
+  text-align: center;
+  @include media-breakpoint-up(lg) {
+    font-size: inherit;
+  }
+}
+.intro-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 330px;
+  @include media-breakpoint-up(lg) {
+    background: url(../img/intro-bg.svg);
+    width: 689px;
+    height: 644px;
+    margin-top: 0;
+  }
+  &::after {
+    content: "";
+    background: url(../img/intro-p.svg) no-repeat;
+    position: absolute;
+    width: 430px;
+    height: 687px;
+    background-size: cover;
+    left: -20px;
+    bottom: -70px;
+    @include media-breakpoint-up(md) {
+      left: calc(50% - 275px);
+    }
+  }
+}
+.intro-container {
+  height: calc (100vh - 66);
+}
+.slogan {
+  font-size: 38px;
+  line-height: 45px;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 50px;
+}
+.introSecondary {
+  background: linear-gradient(
+    228.57deg,
+    #323264 11.93%,
+    #323264 57.17%,
+    #643e72 87.46%
+  );
+  min-height: 1155px;
+  padding-top: 80px;
+  border-radius: 0px 0px 12px 12px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 10px;
+    background: #cacadb;
+    border-radius: 0px 0px 12px 12px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    width: calc(100% - 80px);
+    height: 10px;
+    background: #e7e7f2;
+    border-radius: 0px 0px 12px 12px;
+  }
+}
+.subNav {
+  padding: 0;
+  margin: 0 0 80px;
+  list-style: none;
+  li {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 40px 10px 0;
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      border-right: 4px solid $greySeparator;
+    }
+    &.active {
+      border-color: $linkHover;
+      display: block;
+
+      a {
+        text-decoration: none;
+        background: #ef8080;
+        background: -webkit-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+        background: -moz-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+        background: linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  a {
+    font-size: 14px;
+    line-height: 16.5px;
+    color: $greyText;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+
+    text-transform: uppercase;
+    @include media-breakpoint-up(lg) {
+      display: block;
+      font-size: 42px;
+      line-height: 49.5px;
+      text-transform: none;
+      text-align: right;
+    }
+    &:hover {
+      text-decoration: none;
+      background: #ef8080;
+      background: -webkit-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+      background: -moz-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+      background: linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .active {
+    display: block;
+  }
+}
+.subNavContent {
+  height: 310px;
+  display: flex;
+
+  flex-direction: column;
+  color: #ffffff;
+  @include media-breakpoint-up(lg) {
+    padding: 0 0 0 40px;
+    justify-content: center;
+  }
+  .ttl {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    @include media-breakpoint-up(lg) {
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+    }
+  }
+}
+ul.paging {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    span {
+      cursor: pointer;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin: 0 7px;
+      background: rgba(36, 163, 255, 0.2);
+    }
+    &.active {
+      span {
+        background: $lincColor;
+      }
+    }
+  }
+}
+.sectionLinkWrapper {
+  a {
+    font-size: 14px;
+    line-height: 16.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 3px;
+  }
+}
+.benefitsHeader {
+  h1 {
+    margin-bottom: 68px;
+  }
+}
+.benefits {
+  .iconHolder {
+    width: 64px;
+    height: 64px;
+    border-radius: 24px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    @include media-breakpoint-up(lg) {
+      width: 92px;
+      height: 92px;
+    }
+    img {
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      @include media-breakpoint-up(lg) {
+        padding: 20px;
+      }
+    }
+  }
+  h2 {
+    font-size: $font-size-base;
+    line-height: $line-height-lg;
+    color: $lincColor;
+    margin-bottom: 10px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+  p {
+    font-size: $font-size-sm;
+    line-height: 22px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    @include media-breakpoint-up(lg) {
+      font-size: $font-size-base;
+      line-height: 26px;
+      margin-bottom: 58px;
+    }
+  }
+}
+.sloganTeam {
+  width: 540px;
+  background: #f5f5fa;
+  border-radius: 12px;
+  margin: auto;
+  margin-top: 41px;
+  margin-bottom: 15px;
+  @include media-breakpoint-up(lg) {
+    width: 1440px;
+    margin-bottom: 20px;
+  }
+  .container {
+    display: flex;
+  }
+  .sloganImageWrapper {
+    // display: none;
+    align-self: flex-end;
+    @include media-breakpoint-up(lg) {
+      // display: block;
+      margin-right: 20px;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      @include media-breakpoint-up(lg) {
+        border-radius: 12px 0px 0px 12px;
+        width: 413px;
+        height: 500px;
+      }
+    }
+  }
+  .sloganText {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    .sectionLinkWrapper {
+      a {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 500;
+        color: $lincColor;
+        margin-bottom: 3px;
+        @include media-breakpoint-up(lg) {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .naim {
+      font-size: $font-size-base;
+      line-height: 21px;
+      color: $greyText;
+    }
+    .position {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+      color: $greyText;
+    }
+  }
+}
+.sucessfullyCases {
+  background: #f5f5fa;
+  width: 540px;
+  border-radius: 12px 0px 0px 0px;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-breakpoint-up(lg) {
+    width: 1440px;
+    border-radius: 12px;
+    margin-top: 41px;
+  }
+
+  .cases {
+    display: flex;
+    .col {
+      border: 2px solid #ffffff;
+    }
+  }
+  .casesTitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    color: $linkHover;
+    font-weight: 500;
+    padding: 20px;
+    border-bottom: 2px solid #ffffff;
+  }
+  h2 {
+    font-size: $font-size-base;
+    line-height: 21px;
+    color: $greyMain;
+    padding: 48px 20px 20px 20px;
+    text-align: start;
+    @include media-breakpoint-up(lg) {
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+    }
+  }
+  p {
+    font-size: $font-size-base;
+    line-height: 26px;
+    color: $greyText;
+    text-align: start;
+    padding: 20px;
+  }
+}
+.partner {
+  width: 100%;
+
+  h3 {
+    text-align: center;
+    margin: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #323264;
+  }
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
